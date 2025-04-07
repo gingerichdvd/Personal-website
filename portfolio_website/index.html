@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My website</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" title="Index Page CSS" type="text/css"/>
+    
+</head>
+<body>
+    <!-- 
+    Note: The english class denotes elements displayed when English mode is toggled on, 
+    and the Japanese class denotes objects only shown when Japanese language is toggled on.
+     -->
+    
+    <div class="header">
+
+        <ul class="header-info">
+            <li>
+                <div class="header-info english" id="name" type="button">Name</div>
+                <div class="header-info japanese" id="name" type="button">名前</div>
+            </li>
+            
+            <li>
+                <div class="header-info english" id="contact" type="button">Contact</div>
+                <div class="header-info japanese" id="contact" type="button">連絡先</div>
+            </li>
+        </ul>
+        
+        <ul class="links-and-menus">  
+            <li>
+                <a class="icon-btn" href="http://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer"></a>
+                    <img class="light-theme" src="icons/linkedin_social media_icon.png" alt="LinkedIn Icon" />
+                    <img class="dark-theme" src="icons/linkedin_social media_icon_dark-mode.png" alt="LinkedIn Icon" />
+                </a>
+            </li>
+            <li>
+                <a class="icon-btn" href="http://www.github.com/" target="_blank" rel="noopener noreferrer">
+                    <img class="light-theme" src="icons/github_square_icon.png" alt="Github Icon" />
+                    <img class="dark-theme" src="icons/github_square_icon-dark-mode.png" alt="Github Icon" />
+                </a>
+            </li>
+            <li>
+                <a class="icon-btn" href="/assets/placeholder" download>
+                    <img class="light-theme" src="icons/arrow_download_interface_save_icon.png" alt="Download Resume Icon">
+                    <img class="dark-theme" src="icons/arrow_download_interface_save_icon_dark-mode.png" alt="Download Resume Icon">
+                </a>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <img class="menu-icon light-theme" src="icons/hamburger_menu_icon.png" alt="Dropdown menu icon" />
+                        <img class="menu-icon dark-theme" src="icons/hamburger_menu_icon_dark-mode.png" alt="Dropdown menu icon" />
+                    </button>
+                    
+                    <div class="dropdown-content">
+                        <div class="menu-btn" id="language-toggle" type="button">
+                            <img class="english" src="icons/japan_flag.png" alt="Japan flag icon">
+                            <img class="japanese" src="icons/united_states_flag.png" alt="United States flag icon">
+                        </div>
+                        
+                        <div class="menu-btn" id="toggle-mode" type="button">
+                            <img class="light-theme" src="icons/light-off-or-dark-mode-black-sun.png" alt="light-or-dark mode toggle" />
+                            <img class="dark-theme" src="icons/light-off-or-dark-mode-black-sun_dark-mode.png" alt="light-or-dark mode toggle">
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+    </div> 
+    
+    
+    <div class="main">
+
+        <section id="about">
+            
+        </section>
+
+        <section id="contact-form">
+            <form action="POST">
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <div class="footer"></div>
+    
+    <script src="index.js" type="text/javascript" title="Index Page Scripts"></script>
+    
+</body>
+

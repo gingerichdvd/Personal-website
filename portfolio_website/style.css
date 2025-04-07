@@ -1,0 +1,129 @@
+/* Sets colors to be displayed when light-mode is turned on */
+:root 
+{
+    --primary-color: #333;
+    --background-color: #fff;
+    --text-color: #222;
+    --menu-color: #f1f1f1
+}
+
+/* Sets colors to be displayed when dark-mode is turned on*/
+.dark-mode 
+{
+    --primary-color: #fff;
+    --background-color: #111;
+    --text-color: #ddd;
+    --menu-color: #4e4e4e
+}
+
+/* Displays the colors of the mode set by the modetoggle function */
+body
+{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;   
+}
+
+/* Sets the header size and internal structure*/
+.header
+{
+    display: flex;
+}
+
+/* Remove bullet points from lists, lists items horizontally */
+ul 
+{
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+li
+{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Sets the sixe of the icon buttons to the size of the button images */
+.icon-btn
+{
+    padding: 0px;
+    border: 0px;
+    height: min-content;
+    width: min-content;
+}
+
+
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+}
+
+/* Defines the default look of the dropdown menu button */
+.dropbtn 
+{
+    background-color: var(--background-color);
+    padding: 0;
+    border: 2px;
+    border-style: hidden;
+    border-color: var(--background-color);
+    height: 33px;
+    width: 33px;
+}
+
+/* Removes padding, margin and borders from the menu icon*/
+.menu-icon
+{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+/* Hides dropdown menu by default, makes the background a slightly different color*/
+.dropdown-content
+{
+    display: none;
+    position: absolute;
+    background-color: var(--menu-color);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Displays dropdown menu when the button and menu is hovered over */
+.dropdown:hover .dropdown-content { display: block; }
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #c4c4c4;}
+
+/* Hides Japanese text until Japanese toggled on*/
+.japanese
+{
+    display: none;
+}
+
+#language-toggle
+{
+    width: min-content;
+    height: min-content;
+}
+
+/* Hides elements for the dark mode version of the sight */
+.dark-theme
+{
+    display: none;
+}
+
+.header-info
+{
+    font-size: 26px;
+    font-weight: 500;
+}
+
+#name
+{
+    font-weight: 700;
+}
