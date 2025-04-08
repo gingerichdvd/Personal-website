@@ -22,13 +22,47 @@ body
     background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    font-size: calc(2vh + .7vw);
+}
+
+img
+{
+    width: 2vw;
+    height:2vw;
+    min-width: 25px;
+    min-height: 25px;
+    vertical-align: middle; 
 }
 
 /* Sets the header size and internal structure*/
-.header
+#header
 {
     display: flex;
+    justify-content: space-between;
+    position: fixed;
+    height: 4.5vh;
+    min-height: 20PX;
+    z-index: 999;
+    width: calc(100vw - 25px);
+    padding: 10px;
+    border-width: 2px;
+    border-bottom-color: #111;
+    border-bottom-style: solid;
+    background-color: var(--background-color);
+}
+
+/* Empty div sitting behind the fixed header to properly adjust the starting location of the content section*/
+#spacer
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: calc(4.5vh + 20px);
+    min-height: 40PX;
 }
 
 /* Remove bullet points from lists, lists items horizontally */
@@ -55,6 +89,7 @@ li
     border: 0px;
     height: min-content;
     width: min-content;
+    vertical-align: middle;
 }
 
 
@@ -72,8 +107,8 @@ li
     border: 2px;
     border-style: hidden;
     border-color: var(--background-color);
-    height: 33px;
-    width: 33px;
+    height: min-content;
+    width: min-content;
 }
 
 /* Removes padding, margin and borders from the menu icon*/
@@ -119,11 +154,84 @@ li
 
 .header-info
 {
-    font-size: 26px;
     font-weight: 500;
+    font-size: calc(2vh + 1vw);
 }
 
-#name
+#about-btn
 {
     font-weight: 700;
 }
+
+.header-info, .menu-btn, .dropbtn
+{
+    cursor: pointer;
+}
+
+#content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-section
+{
+    background-color: rgb(169, 208, 221);
+    width: 100vw;
+    max-width: 100%;
+    height: 94.5vh;
+    overflow: hidden;
+    border-bottom: #111;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+/*
+@media (max-height: 2700px)
+{
+    .content-section
+    {
+        margin-top: 275px;
+        margin-bottom: 240px;
+    }
+}
+
+@media (max-height: 2000px)
+{
+    .content-section
+    {
+        margin-top: 150px;
+        margin-bottom: 1500px;
+    }
+}
+
+@media (max-height: 1050px)
+{
+    .content-section
+    {
+        margin-top: 75px;
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-height: 800px)
+{
+    .content-section
+    {
+        margin-top: 65px;
+        margin-bottom: 75;
+    }
+}
+
+@media (max-height: 680px)
+{
+    .content-section
+    {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+}
+*/
+

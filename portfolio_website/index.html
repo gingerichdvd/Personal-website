@@ -1,68 +1,69 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>My website</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" title="Index Page CSS" type="text/css"/>
+    <link rel="stylesheet" href="style.css" title="Index Page CSS"/>
     
 </head>
 <body>
     <!-- 
     Note: The english class denotes elements displayed when English mode is toggled on, 
     and the Japanese class denotes objects only shown when Japanese language is toggled on.
-     -->
+        -->
     
-    <div class="header">
+    <div id="header">
 
         <ul class="header-info">
             <li>
-                <div class="header-info english" id="name" type="button">Name</div>
-                <div class="header-info japanese" id="name" type="button">名前</div>
+                <div class="header-info english" id="about-btn" type="button" onclick="document.getElementById('spacer').scrollIntoView();">Name</div>
+                <div class="header-info japanese" id="about-btn" type="button" onclick="document.getElementById('spacer').scrollIntoView();">名前</div>
             </li>
             
             <li>
-                <div class="header-info english" id="contact" type="button">Contact</div>
-                <div class="header-info japanese" id="contact" type="button">連絡先</div>
+                <div class="header-info english" id="contact-btn" type="button" onclick="document.getElementById('contact-form').scrollIntoView();">Contact</div>
+                <div class="header-info japanese" id="contact-btn" type="button" onclick="document.getElementById('contact-form').scrollIntoView();">連絡先</div>
             </li>
         </ul>
         
         <ul class="links-and-menus">  
             <li>
                 <a class="icon-btn" href="http://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="icons/linkedin_social media_icon.png" alt="LinkedIn Icon" />
-                    <img class="dark-theme" src="icons/linkedin_social media_icon_dark-mode.png" alt="LinkedIn Icon" />
+                    <img class="light-theme" src="icons/5296501_linkedin logo_icon.svg" alt="LinkedIn Icon" />
+                    <img class="dark-theme" src="icons/5296501_linkedin logo_icon_dark-mode.svg" alt="LinkedIn Icon" />
                 </a>
             </li>
             <li>
                 <a class="icon-btn" href="http://www.github.com/" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="icons/github_square_icon.png" alt="Github Icon" />
-                    <img class="dark-theme" src="icons/github_square_icon-dark-mode.png" alt="Github Icon" />
+                    <img class="light-theme" src="icons/8666148_github_square_icon.svg" alt="Github Icon" />
+                    <img class="dark-theme" src="icons/8666148_github_square_icon_dark-mode.svg" alt="Github Icon" />
                 </a>
             </li>
             <li>
                 <a class="icon-btn" href="/assets/placeholder" download>
-                    <img class="light-theme" src="icons/arrow_download_interface_save_icon.png" alt="Download Resume Icon">
-                    <img class="dark-theme" src="icons/arrow_download_interface_save_icon_dark-mode.png" alt="Download Resume Icon">
+                    <img class="light-theme" src="icons/3994354_arrow_download_downloading_interface_save_icon.svg" alt="Download Resume Icon">
+                    <img class="dark-theme" src="icons/3994354_arrow_download_downloading_interface_save_icon_dark-mode.svg" alt="Download Resume Icon">
                 </a>
             </li>
             <li>
                 <div class="dropdown">
                     <button class="dropbtn">
-                        <img class="menu-icon light-theme" src="icons/hamburger_menu_icon.png" alt="Dropdown menu icon" />
-                        <img class="menu-icon dark-theme" src="icons/hamburger_menu_icon_dark-mode.png" alt="Dropdown menu icon" />
+                        <img class="menu-icon light-theme" src="icons/134216_menu_lines_hamburger_icon.svg" alt="Dropdown menu icon" />
+                        <img class="menu-icon dark-theme" src="icons/134216_menu_lines_hamburger_icon_dark-mode.svg" alt="Dropdown menu icon" />
                     </button>
                     
                     <div class="dropdown-content">
                         <div class="menu-btn" id="language-toggle" type="button">
-                            <img class="english" src="icons/japan_flag.png" alt="Japan flag icon">
-                            <img class="japanese" src="icons/united_states_flag.png" alt="United States flag icon">
+                            <img class="english" src="icons/3944460_national_states_united_world_icon.svg" alt="Japan flag icon">
+                            <img class="japanese" src="icons/3920535_country_flag_flags_japan_national_icon.svg" alt="United States flag icon">
                         </div>
                         
                         <div class="menu-btn" id="toggle-mode" type="button">
-                            <img class="light-theme" src="icons/light-off-or-dark-mode-black-sun.png" alt="light-or-dark mode toggle" />
-                            <img class="dark-theme" src="icons/light-off-or-dark-mode-black-sun_dark-mode.png" alt="light-or-dark mode toggle">
+                            <img class="light-theme" src="icons/light-off-or-dark-mode-black-sun-21626.svg" alt="light-or-dark mode toggle" />
+                            <img class="dark-theme" src="icons/light-off-or-dark-mode-black-sun-21626_dark-mode.svg" alt="light-or-dark mode toggle">
                         </div>
                     </div>
                 </div>
@@ -70,15 +71,20 @@
         </ul>
         
     </div> 
-    
-    
-    <div class="main">
 
-        <section id="about">
-            
+    <div id="spacer"></div>
+    
+    
+    <div id="content">
+
+        <section class="content-section" id="about">
+            <div class="inner-content">
+                <div class="english">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</div>
+                <div class="japanese">能て謝画あ喝質スんてド勝際ぞトれ上図ハヲヌヤ記容客当にへご場聞54明メケユ代白ぱ鳥多タウチホ顔争効段ごぞ。属ウワア体平タヘリ題32県9必スアサ岡詳かわ題紙がど食済会そむ金条ツチヲイ己的サネ府雨点へ時所ずゃ位任クミム供名み井週旧面之トばや。取当囲高モナミツ行六イミルカ際弱ヨレツ部合らふゅこ売米のクちと転納へ比笑のなふ季覚ナ持10護コ張料どのゆあ経映ユラフナ一4再ざ伴宅聴そきせ。</div>
+            </div>
         </section>
 
-        <section id="contact-form">
+        <section class="content-section" id="contact-form">
             <form action="POST">
 
             </form>
@@ -87,9 +93,9 @@
 
     </div>
 
-    <div class="footer"></div>
+    <div id="footer"></div>
     
-    <script src="index.js" type="text/javascript" title="Index Page Scripts"></script>
+    <script src="index.js" title="Index Page Scripts"></script>
     
 </body>
-
+</html>

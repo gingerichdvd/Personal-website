@@ -2,6 +2,7 @@ const toggleMode = document.getElementById("toggle-mode");
 const toggleLanguage = document.getElementById("language-toggle");
 const body = document.body;
 
+
 toggleMode.addEventListener('click', () =>
 {
     body.classList.toggle("dark-mode");
