@@ -1,19 +1,39 @@
-const toggleMode = document.getElementById("toggle-mode");
-const toggleLanguage = document.getElementById("language-toggle");
 const body = document.body;
+const toggleMode = document.getElementById("toggle-mode");
+const sidebarToggle = document.getElementById('menu-toggle')
+const sidebarMenu = document.getElementById('sidebar-menu');
+const responsiveBreakpoint = 900;
 
-
-toggleMode.addEventListener('click', () =>
+// Function to check and apply the browser's preferred color scheme
+function checkPreferredColorScheme() 
 {
-    body.classList.toggle("dark-mode");
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) 
+  {
+    body.classList.add("dark-mode");
+  } 
+  else 
+  {
+    body.classList.remove("dark-mode");
+  }
+  updateDisplay();
+}
 
-    var lightModeElements = document.getElementsByClassName("light-theme");
-    var darkModeElements = document.getElementsByClassName("dark-theme");
+// Toggles the classlist
+function toggleModes() 
+{
+  body.classList.toggle("dark-mode");
+  updateDisplay();
+}
+
+// Hides or shows element based on the toggled mode, and updates the color scheme
+function updateDisplay() 
+{
+    const lightModeElements = document.getElementsByClassName("light-theme");
+    const darkModeElements = document.getElementsByClassName("dark-theme");
 
     for (let i = 0; i < darkModeElements.length; i++)
     {
-        let darkModeDisplay = window.getComputedStyle(darkModeElements[i]).display;
-        if (darkModeDisplay === "none")
+        if (body.classList.contains("dark-mode")) 
         {
             darkModeElements[i].style.display = "block";
             lightModeElements[i].style.display = "none";
@@ -24,25 +44,43 @@ toggleMode.addEventListener('click', () =>
             lightModeElements[i].style.display = "block";
         }
     }
-});
+}
 
-toggleLanguage.addEventListener('click', () =>
+// Function to close menu at max size
+function closeMenuAtMaxSize(sidebar, breakpoint) 
 {
-    var engElements = document.getElementsByClassName("english");
-    var japElements = document.getElementsByClassName("japanese");
-
-    for (let i = 0; i < japElements.length; i++)
+    function checkWindowSize() 
     {
-        let japDisplay = window.getComputedStyle(japElements[i]).display;
-        if (japDisplay === "none")
+        if (window.innerWidth >= breakpoint) 
         {
-            japElements[i].style.display = "block";
-            engElements[i].style.display = "none";
-        }
-        else
-        {
-            japElements[i].style.display = "none";
-            engElements[i].style.display = "block";
+            sidebar.style.display = "none";
         }
     }
+
+    window.addEventListener('resize', checkWindowSize);
+    checkWindowSize(); // Initial check when script runs
+}
+
+// Listen for changes in the browser's preferred color scheme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkPreferredColorScheme);
+
+// Event listener for the toggle button
+toggleMode.addEventListener('click', toggleModes);
+
+// Event listener for the menu toggle button
+sidebarToggle.addEventListener('click', function() 
+{
+    if (sidebarMenu.style.display === 'flex') 
+    {
+        sidebarMenu.style.display = 'none';
+    } 
+    else 
+    {
+        sidebarMenu.style.display = 'flex';
+    }
 });
+
+closeMenuAtMaxSize(sidebarMenu, responsiveBreakpoint);
+
+// Initial check of the browser's preferred color scheme
+checkPreferredColorScheme();

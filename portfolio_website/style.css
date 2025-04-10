@@ -1,58 +1,46 @@
 /* Sets colors to be displayed when light-mode is turned on */
 :root 
 {
-    --primary-color: #333;
-    --background-color: #fff;
-    --text-color: #222;
-    --menu-color: #f1f1f1
+    --primary-background-color: #f4f3ef;
+    --secondary-background-color: #f9f9f7;
+    --tertiary-background-color: #eae8e0;
+    --primary-text-color: #101010;
+    --secondary-text-color: #303030;
 }
 
 /* Sets colors to be displayed when dark-mode is turned on*/
 .dark-mode 
 {
-    --primary-color: #fff;
-    --background-color: #111;
-    --text-color: #ddd;
-    --menu-color: #4e4e4e
+    --primary-background-color: #272822;
+    --secondary-background-color: #1e1f1c;
+    --tertiary-background-color: #464741;
+    --primary-text-color: #f8f8f0;
+    --secondary-text-color: #dadada;
+}
+
+/* Hides elements for the dark mode version of the sight */
+.dark-theme
+{
+    display: none;
 }
 
 /* Displays the colors of the mode set by the modetoggle function */
 body
 {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
     border-width: 0;
-    font-size: calc(2vh + .7vw);
+    font-size: 24px;
 }
 
 img
 {
-    width: 2vw;
-    height:2vw;
-    min-width: 25px;
-    min-height: 25px;
-    vertical-align: middle; 
-}
-
-/* Sets the header size and internal structure*/
-#header
-{
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    height: 4.5vh;
-    min-height: 20PX;
-    z-index: 999;
-    width: calc(100vw - 25px);
-    padding: 10px;
-    border-width: 2px;
-    border-bottom-color: #111;
-    border-bottom-style: solid;
-    background-color: var(--background-color);
+    height: 32px;
+    width: 32px;
 }
 
 /* Empty div sitting behind the fixed header to properly adjust the starting location of the content section*/
@@ -61,12 +49,35 @@ img
     margin: 0;
     padding: 0;
     border: 0;
-    height: calc(4.5vh + 20px);
-    min-height: 40PX;
+    height: 58px;
 }
 
+/* Sets the header size and internal structure*/
+#header
+{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    height: 36px;
+    z-index: 999;
+    width: 100vw;
+    max-width: 100%;
+    padding: 10px;
+    border-width: 2px;
+    border-bottom-color: #111;
+    border-bottom-style: solid;
+    background-color: var(--secondary-background-color);
+}
+
+/* Spacer to move sidebar menu to right side of page, only for use on small screen sizes*/
+#header-spacer
+{
+    display: none;
+}
+
+
 /* Remove bullet points from lists, lists items horizontally */
-ul 
+.header-left, .header-right
 {
     list-style-type: none;
     list-style: none;
@@ -76,22 +87,16 @@ ul
     flex-direction: row;
 }
 
-li
+.header-left li, .header-right li
 {
     margin-left: 5px;
     margin-right: 5px;
 }
 
-/* Sets the sixe of the icon buttons to the size of the button images */
-.icon-btn
+.header-right
 {
-    padding: 0px;
-    border: 0px;
-    height: min-content;
-    width: min-content;
-    vertical-align: middle;
+    margin-right: 20px;
 }
-
 
 .dropdown 
 {
@@ -102,11 +107,9 @@ li
 /* Defines the default look of the dropdown menu button */
 .dropbtn 
 {
-    background-color: var(--background-color);
-    padding: 0;
-    border: 2px;
+    background-color: var(--secondary-background-color);
+    padding: 2px;
     border-style: hidden;
-    border-color: var(--background-color);
     height: min-content;
     width: min-content;
 }
@@ -124,20 +127,27 @@ li
 {
     display: none;
     position: absolute;
-    background-color: var(--menu-color);
+    background-color: var(--tertiary-background-color);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* Displays dropdown menu when the button and menu is hovered over */
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content 
+{ 
+    display: flex;
+    height: 80px;
+    width: 60px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    right: -2px;
+
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #c4c4c4;}
-
-/* Hides Japanese text until Japanese toggled on*/
-.japanese
+.dropdown:hover .dropbtn 
 {
-    display: none;
+    background-color: var(--tertiary-background-color);
 }
 
 #language-toggle
@@ -146,27 +156,45 @@ li
     height: min-content;
 }
 
-/* Hides elements for the dark mode version of the sight */
-.dark-theme
+
+.nav-btn
 {
-    display: none;
+    font-weight: 600;
+    font-size: 28px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px none;
+    border-radius: 2px;
 }
 
-.header-info
-{
-    font-weight: 500;
-    font-size: calc(2vh + 1vw);
-}
-
-#about-btn
-{
-    font-weight: 700;
-}
-
-.header-info, .menu-btn, .dropbtn
+.nav-btn, .menu-btn, .dropbtn
 {
     cursor: pointer;
 }
+
+.nav-btn:hover
+{
+    color: var(--secondary-text-color);
+    background-color: var(--tertiary-background-color);
+}
+
+.icon-btn
+{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding: 3px;
+    border: 1px transparent;
+    border-radius: 2px;
+}
+
+
+.icon-btn:hover
+{
+    background-color: var(--tertiary-background-color);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 #content
 {
@@ -178,60 +206,205 @@ li
 
 .content-section
 {
-    background-color: rgb(169, 208, 221);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-background-color);
     width: 100vw;
     max-width: 100%;
-    height: 94.5vh;
+    height: calc(100vh - 58px);
     overflow: hidden;
-    border-bottom: #111;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
+
 }
 
-/*
-@media (max-height: 2700px)
+.inner-content
 {
-    .content-section
+    display: flex;
+    height: 400px;
+    width: 700px;
+    padding: 10px;
+    background-color: var(--primary-background-color);
+}
+
+#form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
+}
+
+.contact-inputs
+{
+    margin: 5px;
+    width: 500px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--tertiary-background-color);
+    color: var(--primary-text-color);
+}
+
+#message
+{
+    height: 200px;
+    text-wrap: wrap;
+    padding: 10px;
+    scrollbar-width: thin;
+}
+
+.contact-inputs:focus
+{
+    border: 2px solid #222;
+}
+
+#submit
+{
+    width: 100px;
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    height: 32px;
+    margin-top: 10px;
+    background-color: var(--tertiary-background-color);
+    color: var(--primary-text-color);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#submit-img
+{
+    width: 25PX;
+    height: 25PX;
+    vertical-align: middle;
+    padding-left: 4px;
+    
+}
+
+#footer
+{
+    height: 12px;
+    width: 100vw;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--secondary-background-color);
+}
+
+
+/* Default styles */
+#sidebar-menu {
+    display: none;
+    position: fixed;
+    top: 58px;
+    right: 0; /* Change from left to right */
+    height: calc(100vh - 58px);
+    background-color: var(--secondary-background-color);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar-menu ul 
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar-menu li 
+{
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+#menu-toggle
+{
+    display: none;
+    margin-right: 20px;
+    right: 0;
+    cursor: pointer;
+}
+
+/* Tablet size */
+@media (max-width: 900px) 
+{
+    .header-right 
     {
-        margin-top: 275px;
-        margin-bottom: 240px;
+      display: none;
+      
+    }
+
+    #menu-toggle 
+    {
+      display: block;
+    }
+
+    #sidebar-menu 
+    {
+      display: none;
+      width: 30vw;
+    }
+
+    .sidebar-right 
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar-left
+    {
+        display: none;
     }
 }
 
-@media (max-height: 2000px)
+/* Smartphone size */
+@media (max-width: 600px) 
 {
-    .content-section
+    #header-spacer
     {
-        margin-top: 150px;
-        margin-bottom: 1500px;
+        display: flex;
+        flex-grow: 1;
     }
-}
-
-@media (max-height: 1050px)
-{
-    .content-section
+    #sidebar-menu
     {
-        margin-top: 75px;
-        margin-bottom: 90px;
+        width: 100vw;
     }
-}
 
-@media (max-height: 800px)
-{
-    .content-section
+    .header-left
     {
-        margin-top: 65px;
-        margin-bottom: 75;
+      display: none;
     }
-}
 
-@media (max-height: 680px)
-{
-    .content-section
+    .sidebar-left 
     {
-        margin-top: 40px;
-        margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
     }
-}
-*/
 
+    .sidebar-right {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .dropdown-content
+    {
+        display: flex;
+        
+    }
+
+}
