@@ -1,8 +1,13 @@
+// ------------------------------------------------ Constants -------------------------------------------------------
 const body = document.body;
-const toggleMode = document.getElementById("toggle-mode");
-const sidebarToggle = document.getElementById('menu-toggle')
-const sidebarMenu = document.getElementById('sidebar-menu');
+const headerThemeToggleBtn = document.getElementById("header-theme-toggle-button");
+const sidebarThemeToggleBtn = document.getElementById('sidebar-theme-toggle-button')
+
+const sidebarToggle = document.getElementById('sidebar-menu-container-toggle-button')
+const sidebarMenu = document.getElementById('sidebar-menu-container');
 const responsiveBreakpoint = 900;
+
+// ----------------------------------------------- Functions ---------------------------------------------------------
 
 // Function to check and apply the browser's preferred color scheme
 function checkPreferredColorScheme() 
@@ -19,7 +24,7 @@ function checkPreferredColorScheme()
 }
 
 // Toggles the classlist
-function toggleModes() 
+function toggleDarkMode() 
 {
   body.classList.toggle("dark-mode");
   updateDisplay();
@@ -28,8 +33,8 @@ function toggleModes()
 // Hides or shows element based on the toggled mode, and updates the color scheme
 function updateDisplay() 
 {
-    const lightModeElements = document.getElementsByClassName("light-theme");
-    const darkModeElements = document.getElementsByClassName("dark-theme");
+    const lightModeElements = document.getElementsByClassName("light-theme-element");
+    const darkModeElements = document.getElementsByClassName("dark-theme-element");
 
     for (let i = 0; i < darkModeElements.length; i++)
     {
@@ -57,17 +62,23 @@ function closeMenuAtMaxSize(sidebar, breakpoint)
         }
     }
 
+    // Listens for size changes to the windows 
     window.addEventListener('resize', checkWindowSize);
-    checkWindowSize(); // Initial check when script runs
+    checkWindowSize(); // Initial check of browser size
 }
+
+// ------------------------------------------- Adding listeners ---------------------------------------------------
 
 // Listen for changes in the browser's preferred color scheme
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkPreferredColorScheme);
 
-// Event listener for the toggle button
-toggleMode.addEventListener('click', toggleModes);
 
-// Event listener for the menu toggle button
+// Event listener for the light/dark theme toggle buttons
+headerThemeToggleBtn.addEventListener('click', toggleDarkMode);
+sidebarThemeToggleBtn.addEventListener('click', toggleDarkMode);
+
+
+// Opens or closes the sidebar menu when menu toggle button is clicked
 sidebarToggle.addEventListener('click', function() 
 {
     if (sidebarMenu.style.display === 'flex') 
@@ -80,7 +91,11 @@ sidebarToggle.addEventListener('click', function()
     }
 });
 
+// ----------------------------------------Initial Function Calls -----------------------------------------------------
+
+// Calls function on load to listen for size changes to the browser
 closeMenuAtMaxSize(sidebarMenu, responsiveBreakpoint);
+
 
 // Initial check of the browser's preferred color scheme
 checkPreferredColorScheme();

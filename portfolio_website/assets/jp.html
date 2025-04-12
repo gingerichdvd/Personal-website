@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,139 +15,150 @@
 <body>
     
     <div id="header">
+        <div id="header-space-adjuster"></div>
 
         <ul class="header-left">
             <li>
-                <div class="nav-btn" id="about-btn" type="button" onclick="document.getElementById('spacer').scrollIntoView();">名前</div>
+                <div class="nav-btn" id="about-button" type="button" onclick="document.getElementById('content-space-adjuster').scrollIntoView();">名前</div>
+
             </li>
             
             <li>
-                <div class="nav-btn" id="contact-btn" type="button" onclick="document.getElementById('contact-form').scrollIntoView();">連絡先</div>
+                <div class="nav-btn" id="contact-button" type="button" onclick="document.getElementById('contact-form-section').scrollIntoView();">連絡先</div>
             </li>
         </ul>
         
         <ul class="header-right">  
             <li>
-                <a class="icon-btn" href="http://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="../icons/5296501_linkedin logo_icon.svg" alt="LinkedIn Icon" />
-                    <img class="dark-theme" src="../icons/5296501_linkedin logo_icon_dark-mode.svg" alt="LinkedIn Icon" />
+                <a class="icon-btn" href="http://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer" title="linkedin.com/in/placeholder">
+                    <img class="light-theme-element" src="../icons/5296501_linkedin logo_icon.svg" alt="LinkedIn Icon" />
+                    <img class="dark-theme-element" src="../icons/5296501_linkedin logo_icon_dark-mode.svg" alt="LinkedIn Icon" />
                 </a>
             </li>
             <li>
-                <a class="icon-btn" href="http://www.github.com/" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="../icons/8666148_github_square_icon.svg" alt="Github Icon" />
-                    <img class="dark-theme" src="../icons/8666148_github_square_icon_dark-mode.svg" alt="Github Icon" />
+                <a class="icon-btn" href="http://www.github.com/" target="_blank" rel="noopener noreferrer" title="github.com">
+                    <img class="light-theme-element" src="../icons/8666148_github_square_icon.svg" alt="Github Icon" />
+                    <img class="dark-theme-element" src="../icons/8666148_github_square_icon_dark-mode.svg" alt="Github Icon" />
                 </a>
             </li>
             <li>
-                <a class="icon-btn" href="../assets/placeholder" download>
-                    <img class="light-theme" src="../icons/3994354_arrow_download_downloading_interface_save_icon.svg" alt="Download Resume Icon">
-                    <img class="dark-theme" src="../icons/3994354_arrow_download_downloading_interface_save_icon_dark-mode.svg" alt="Download Resume Icon">
+                <a class="icon-btn" href="../assets/placeholder" download title="ダウンロード履歴書">
+                    <img class="light-theme-element" src="../icons/3994354_arrow_download_downloading_interface_save_icon.svg" alt="Download Resume Icon">
+                    <img class="dark-theme-element" src="../icons/3994354_arrow_download_downloading_interface_save_icon_dark-mode.svg" alt="Download Resume Icon">
                 </a>
             </li>
             <li>
                 <div class="dropdown">
                     <button class="dropbtn">
-                        <img class="menu-icon light-theme" src="../icons/134216_menu_lines_hamburger_icon.svg" alt="Dropdown menu icon" />
-                        <img class="menu-icon dark-theme" src="../icons/134216_menu_lines_hamburger_icon_dark-mode.svg" alt="Dropdown menu icon" />
+                        <img class="menu-icon light-theme-element" src="../icons/134216_menu_lines_hamburger_icon.svg" alt="Dropdown menu icon" />
+                        <img class="menu-icon dark-theme-element" src="../icons/134216_menu_lines_hamburger_icon_dark-mode.svg" alt="Dropdown menu icon" />
                     </button>
                     
                     <div class="dropdown-content">
-                        <a class="menu-btn" id="language-toggle" href="../index.html">
-                            <img src="../icons/3944460_national_states_united_world_icon.svg" alt="United States flag icon">
+                        <a class="menu-btn" id="language-toggle-link" href="../index.html">
+                            <img src="../icons/3944460_national_states_united_world_icon.svg" alt="Japan flag icon">
                         </a>
                         
-                        <div class="menu-btn" id="toggle-mode" type="button">
-                            <img class="light-theme" src="../icons/light-off-or-dark-mode-black-sun-21626.svg" alt="light-or-dark mode toggle" />
-                            <img class="dark-theme" src="../icons/light-off-or-dark-mode-black-sun-21626_dark-mode.svg" alt="light-or-dark mode toggle">
+                        <div class="menu-btn" id="header-theme-toggle-button" type="button">
+                            <img class="light-theme-element" src="../icons/light-off-or-dark-mode-black-sun-21626.svg" alt="light-or-dark mode toggle" />
+                            <img class="dark-theme-element" src="../icons/light-off-or-dark-mode-black-sun-21626_dark-mode.svg" alt="light-or-dark mode toggle">
                         </div>
                     </div>
                 </div>
             </li>
         </ul>
-        
-        <div id="menu-toggle" class="menu-toggle" type="button">☰</div>
 
+        <div id="sidebar-menu-container-toggle-button" class="sidebar-menu-container-toggle-button" type="button">
+            <img class="light-theme-element" src="../icons/2203529_app_block_menu_setting_tile_icon.svg" alt="Tile Menu">
+            <img class="dark-theme-element" src="../icons/2203529_app_block_menu_setting_tile_icon_dark-mode.svg" alt="Tile Menu">
+        </div>
+  
     </div> 
 
-    <div id="sidebar-menu" class="sidebar">
+    <!-- ------------------------------------ Split between sidebar menu and header ------------------------------------------------>
+    
+    <div id="sidebar-menu-container" class="sidebar">
+
+        <div class="sidebar-dropdown">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img class="menu-icon light-theme-element" src="../icons/134216_menu_lines_hamburger_icon.svg" alt="Dropdown menu icon" />
+                    <img class="menu-icon dark-theme-element" src="../icons/134216_menu_lines_hamburger_icon_dark-mode.svg" alt="Dropdown menu icon" />
+                </button>
+            
+                <div class="dropdown-content">
+                    <a class="menu-btn" id="language-toggle-link" href="../index.html">
+                        <img src="../icons/3944460_national_states_united_world_icon.svg" alt="Japan flag icon">
+                    </a>
+            
+                    <div class="menu-btn" id="sidebar-theme-toggle-button" type="button">
+                        <img class="light-theme-element" src="../icons/light-off-or-dark-mode-black-sun-21626.svg" alt="light-or-dark mode toggle" />
+                        <img class="dark-theme-element" src="../icons/light-off-or-dark-mode-black-sun-21626_dark-mode.svg" alt="light-or-dark mode toggle">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <ul class="sidebar-left">
             <li class="sidebar-left-list">
-                <div class="nav-btn  " id="about-btn" type="button" onclick="document.getElementById('spacer').scrollIntoView();">名前</div>
+                <div class="nav-btn  " id="about-button" type="button" onclick="document.getElementById('content-space-adjuster').scrollIntoView();">Name</div>
 
             </li>
             
             <li class="sidebar-left-list">
-                <div class="nav-btn  " id="contact-btn" type="button" onclick="document.getElementById('contact-form').scrollIntoView();">連絡先</div>
+                <div class="nav-btn  " id="contact-button" type="button" onclick="document.getElementById('contact-contact-form').scrollIntoView();">Contact</div>
             </li>
         </ul>
         <ul class="sidebar-right">
             <li class="sidebar-right-list">
                 <a class="icon-btn" href="http://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="../icons/5296501_linkedin logo_icon.svg" alt="LinkedIn Icon" />
-                    <img class="dark-theme" src="../icons/5296501_linkedin logo_icon_dark-mode.svg" alt="LinkedIn Icon" />
+                    <img class="light-theme-element" src="../icons/5296501_linkedin logo_icon.svg" alt="LinkedIn Icon" />
+                    <img class="dark-theme-element" src="../icons/5296501_linkedin logo_icon_dark-mode.svg" alt="LinkedIn Icon" />
                 </a>
             </li>
             <li class="sidebar-right-list">
                 <a class="icon-btn" href="http://www.github.com/" target="_blank" rel="noopener noreferrer">
-                    <img class="light-theme" src="../icons/8666148_github_square_icon.svg" alt="Github Icon" />
-                    <img class="dark-theme" src="../icons/8666148_github_square_icon_dark-mode.svg" alt="Github Icon" />
+                    <img class="light-theme-element" src="../icons/8666148_github_square_icon.svg" alt="Github Icon" />
+                    <img class="dark-theme-element" src="../icons/8666148_github_square_icon_dark-mode.svg" alt="Github Icon" />
                 </a>
             </li>
             <li class="sidebar-right-list">
-                <a class="icon-btn" href="..//assets/placeholder" download>
-                    <img class="light-theme" src="../icons/3994354_arrow_download_downloading_interface_save_icon.svg" alt="Download Resume Icon">
-                    <img class="dark-theme" src="../icons/3994354_arrow_download_downloading_interface_save_icon_dark-mode.svg" alt="Download Resume Icon">
+                <a class="icon-btn" href="assets/placeholder" download>
+                    <img class="light-theme-element" src="../icons/3994354_arrow_download_downloading_interface_save_icon.svg" alt="Download Resume Icon">
+                    <img class="dark-theme-element" src="../icons/3994354_arrow_download_downloading_interface_save_icon_dark-mode.svg" alt="Download Resume Icon">
                 </a>
-            </li>
-            <li class="sidebar-right-list">
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <img class="menu-icon light-theme" src="../icons/134216_menu_lines_hamburger_icon.svg" alt="Dropdown menu icon" />
-                        <img class="menu-icon dark-theme" src="../icons/134216_menu_lines_hamburger_icon_dark-mode.svg" alt="Dropdown menu icon" />
-                    </button>
-                    
-                    <div class="dropdown-content">
-                        <a class="menu-btn" id="language-toggle" href="../assets/index.html">
-                            <img src="../icons/3920535_country_flag_flags_japan_national_icon.svg" alt="Japan flag icon">
-                        </a>
-                        
-                        <div class="menu-btn" id="toggle-mode" type="button">
-                            <img class="light-theme" src="../icons/light-off-or-dark-mode-black-sun-21626.svg" alt="light-or-dark mode toggle" />
-                            <img class="dark-theme" src="../icons/light-off-or-dark-mode-black-sun-21626_dark-mode.svg" alt="light-or-dark mode toggle">
-                        </div>
-                    </div>
-                </div>
             </li>
         </ul>
     </div>
-
-    <div id="spacer"></div>
     
+    <div id="content-space-adjuster"></div>
+    
+    <!------------------------------------------ Split between sidebar and contents ------------------------------------------------->
     
     <div id="content">
 
         <section class="content-section" id="about">
             <div class="inner-content">
-                <div class=" ">能て謝画あ喝質スんてド勝際ぞトれ上図ハヲヌヤ記容客当にへご場聞54明メケユ代白ぱ鳥多タウチホ顔争効段ごぞ。属ウワア体平タヘリ題32県9必スアサ岡詳かわ題紙がど食済会そむ金条ツチヲイ己的サネ府雨点へ時所ずゃ位任クミム供名み井週旧面之トばや。取当囲高モナミツ行六イミルカ際弱ヨレツ部合らふゅこ売米のクちと転納へ比笑のなふ季覚ナ持10護コ張料どのゆあ経映ユラフナ一4再ざ伴宅聴そきせ。</div>
+                <div>能て謝画あ喝質スんてド勝際ぞトれ上図ハヲヌヤ記容客当にへご場聞54明メケユ代白ぱ鳥多タウチホ顔争効段ごぞ。属ウワア体平タヘリ題32県9必スアサ岡詳かわ題紙がど食済会そむ金条ツチヲイ己的サネ府雨点へ時所ずゃ位任クミム供名み井週旧面之トばや。取当囲高モナミツ行六イミルカ際弱ヨレツ部合らふゅこ売米のクちと転納へ比笑のなふ季覚ナ持10護コ張料どのゆあ経映ユラフナ一4再ざ伴宅聴そきせ。.</div>
             </div>
         </section>
 
-        <section class="content-section" id="contact-form">
-            <div class="form-container  ">
-                <form id="form" action="POST">
-                    <input type="text" name="name" class="contact-inputs" id="sender-name" placeholder="あなたの名前" required>
-                    <input type="email" name="email" class="contact-inputs" id="sender-email" placeholder="あなたのメールアドレス" required>
-                    <textarea name="message" class="contact-inputs" id="message" placeholder="あなたのメッセージ" required></textarea>
-                    <button class="light-theme" id="submit" type="submit">送信<img id="submit-img" src="../icons/211621_c_right_arrow_icon.svg"></button>
-                    <button class="dark-theme" id="submit" type="submit">送信<img id="submit-img" src="../icons/211621_c_right_arrow_icon_dark-mode.svg"></button>
-                </form>
+        <section class="content-section" id="contact-form-section">
+            <div class="contact-form-container">
+                <contact-form id="contact-form" action="POST">
+
+                    <input type="text" name="name" class="contact-inputs" id="sender-name-input" placeholder="Your Name" required>
+                    <input type="email" name="email" class="contact-inputs" id="sender-email-input" placeholder="Your Email" required>
+                    <textarea name="message-textarea" class="contact-inputs" id="message-textarea" placeholder="Your Message" required></textarea>
+                    <button class="light-theme-element" id="submit-button" type="submit-button">送信<img id="submit-button-img" src="../icons/211621_c_right_arrow_icon.svg"></button>
+                    <button class="dark-theme-element" id="submit-button" type="submit-button">送信<img id="submit-button-img" src="../icons/211621_c_right_arrow_icon_dark-mode.svg"></button>
+                </contact-form>
             </div>
         </section>
 
     </div>
 
-    <div id="footer">
+    <div id="footer-container">
         <div></div>
     </div>
     
